@@ -1,3 +1,11 @@
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -33,8 +41,8 @@ module.exports = {
       options: {
         spaceId: `bqmcgp4f9wkx`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      }
-    }
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

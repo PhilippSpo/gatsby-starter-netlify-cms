@@ -48,13 +48,15 @@ const Article = ({ data, location }) => {
       <ResponsiveContainer verticalInset="none">
         <Stack scale="xl">
           <Hero>
-            <Hero.ImageWithGradient>
-              <Img
-                fluid={data.contentfulArticle.heroSection.heroImage.fluid}
-                alt={data.contentfulArticle.heroSection.title}
-              />
-              <Hero.Gradient />
-            </Hero.ImageWithGradient>
+            {data.contentfulArticle.heroSection && (
+              <Hero.ImageWithGradient>
+                <Img
+                  fluid={data.contentfulArticle.heroSection.heroImage.fluid}
+                  alt={data.contentfulArticle.heroSection.title}
+                />
+                <Hero.Gradient />
+              </Hero.ImageWithGradient>
+            )}
             {data.contentfulArticle.mediaCollection && (
               <Hero.Title>
                 <Stack scale="l">
@@ -77,11 +79,16 @@ const Article = ({ data, location }) => {
               </Hero.Title>
             )}
           </Hero>
-          <TextLayout pullUp={!data.contentfulArticle.mediaCollection}>
+          <TextLayout
+            pullUp={
+              !data.contentfulArticle.mediaCollection &&
+              data.contentfulArticle.heroSection
+            }
+          >
             <Stack scale="xl">
               {!data.contentfulArticle.mediaCollection && (
                 <Headline.XXL isOnDarkBackground>
-                  {data.contentfulArticle.heroSection.title}
+                  {data.contentfulArticle.title}
                 </Headline.XXL>
               )}
               {data.contentfulArticle.mediaCollection &&
