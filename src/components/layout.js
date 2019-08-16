@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 
 const GlobalStyle = createGlobalStyle`
