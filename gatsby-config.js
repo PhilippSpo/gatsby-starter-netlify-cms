@@ -46,7 +46,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Lato:300i,400`]
+        fonts: [`Lato:300i,400`],
+        fonts: [`Oswald:400`]
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

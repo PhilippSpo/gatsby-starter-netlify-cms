@@ -3,6 +3,8 @@ const colors = {
     onBrightBackground: 'hsl(26, 100%, 38%)',
     onDarkBackground: 'hsl(41, 100%, 50%)'
   },
+  orange1: 'hsl(47, 30%, 89%)',
+  orange2: 'hsl(47, 69%, 69%)',
   orange8: 'hsl(41, 100%, 80%)',
   orange6: 'hsl(41, 100%, 60%)',
   black: '#151517',

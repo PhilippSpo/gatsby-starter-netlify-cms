@@ -11,6 +11,8 @@ const mapScaleToPixels = scale => {
       return 16
     case 'xl':
       return 32
+    case 'xxl':
+      return 64
     default:
       return 4
   }
