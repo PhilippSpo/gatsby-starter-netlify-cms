@@ -39,8 +39,19 @@ const Text = {
     font-size: 0.8rem;
     letter-spacing: 0.14rem;
     color: ${getColor};
+    transition: color 0.2s;
     :hover {
       color: ${colors.orange6};
+    }
+  `,
+  LandingPageButton: styled.span`
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: ${colors.orange1};
+    transition: color 0.2s;
+    :hover {
+      color: ${colors.orange2};
     }
   `
 }

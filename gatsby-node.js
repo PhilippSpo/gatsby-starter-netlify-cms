@@ -26,15 +26,15 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   result.data.allContentfulArticle.edges.forEach(edge => {
     // TODO define in contentful
-    if (edge.node.slug === "die-band") {
-      actions.createPage({
-        path: "/",
-        component: articleTemplate,
-        context: {
-          slug: edge.node.slug,
-        },
-      })
-    }
+    // if (edge.node.slug === "die-band") {
+    //   actions.createPage({
+    //     path: "/",
+    //     component: articleTemplate,
+    //     context: {
+    //       slug: edge.node.slug,
+    //     },
+    //   })
+    // }
     actions.createPage({
       path: edge.node.slug,
       component: articleTemplate,
