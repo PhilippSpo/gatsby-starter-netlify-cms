@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import colors from '../constants/colors'
+import styled from "styled-components"
+import colors from "../constants/colors"
 
 const getColor = props => {
   const baseColor = props.isOnDarkBackground ? colors.white : colors.black
@@ -13,6 +13,7 @@ const getColor = props => {
 
 const Text = {
   Body: styled.span`
+    white-space: pre-line;
     line-height: 1.5;
     font-size: 1.1rem;
     font-weight: 400;
@@ -71,6 +72,6 @@ const Text = {
     :hover {
       color: ${colors.orange2};
     }
-  `
+  `,
 }
 export default Text
