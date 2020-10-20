@@ -9,6 +9,7 @@ import Text from "../components/text"
 import Stack from "../components/stack"
 import colors from "../constants/colors"
 import MusicNote from "../components/music-note"
+import Footer from "../components/footer"
 
 const fadeIn = keyframes`
   0% {
@@ -129,40 +130,43 @@ const NotFoundPage = props => {
     }, 1000)
   }, 1000)
   return (
-    <LandingPageLayout>
-      <SEO title="Royal Ampire" />
-      <GlobalStyle />
-      <ImageContainer>
-        <Img
-          fluid={props.data.contentfulLandingPage.heroImage.fluid}
-          alt={props.data.contentfulLandingPage.title}
-          objectFit="fill"
-        />
-        <ImageOverlayPattern />
-        <ImageOverlay />
-      </ImageContainer>
-      <Stack scale="xl" alignItems="center">
-        <StyledRoyalAmpireLogo
-          verticallyCenterStars={centerStarsVertically}
-          horizontallyCenterStars={centerStarsHorizontally}
-        />
-        <ResponsiveInline alignItems="center">
-          {props.data.allContentfulNavigation.edges.map(({ node }) =>
-            node.pages.map(page => (
-              <NavLink key={page.slug} to={`/${page.slug}`}>
-                <Text.LandingPageButton
-                  isActive={props.location.pathname.includes(page.slug)}
-                  isOnDarkBackground
-                >
-                  {page.title}
-                </Text.LandingPageButton>
-                <MusicNote />
-              </NavLink>
-            ))
-          )}
-        </ResponsiveInline>
-      </Stack>
-    </LandingPageLayout>
+    <>
+      <LandingPageLayout>
+        <SEO title="Royal Ampire" />
+        <GlobalStyle />
+        <ImageContainer>
+          <Img
+            fluid={props.data.contentfulLandingPage.heroImage.fluid}
+            alt={props.data.contentfulLandingPage.title}
+            objectFit="fill"
+          />
+          <ImageOverlayPattern />
+          <ImageOverlay />
+        </ImageContainer>
+        <Stack scale="xl" alignItems="center">
+          <StyledRoyalAmpireLogo
+            verticallyCenterStars={centerStarsVertically}
+            horizontallyCenterStars={centerStarsHorizontally}
+          />
+          <ResponsiveInline alignItems="center">
+            {props.data.allContentfulNavigation.edges.map(({ node }) =>
+              node.pages.map(page => (
+                <NavLink key={page.slug} to={`/${page.slug}`}>
+                  <Text.LandingPageButton
+                    isActive={props.location.pathname.includes(page.slug)}
+                    isOnDarkBackground
+                  >
+                    {page.title}
+                  </Text.LandingPageButton>
+                  <MusicNote />
+                </NavLink>
+              ))
+            )}
+          </ResponsiveInline>
+        </Stack>
+      </LandingPageLayout>
+      <Footer />
+    </>
   )
 }
 
