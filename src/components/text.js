@@ -29,6 +29,15 @@ const Text = {
     li {
       margin-left: 1em;
     }
+    a {
+      color: ${colors.orange2};
+    }
+    a:hover {
+      color: ${colors.orange1};
+    }
+    a:visited {
+      color: ${colors.orange2};
+    }
   `,
   Detail: styled.span`
     line-height: 1.1;
