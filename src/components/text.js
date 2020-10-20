@@ -17,8 +17,17 @@ const Text = {
     font-size: 1.1rem;
     font-weight: 400;
     color: ${props => (props.isOnDarkBackground ? colors.white : colors.black)};
-    p + p {
+    * + p {
       margin: 16px 0 0 0;
+    }
+    * + ul {
+      margin-top: 1em;
+    }
+    ul {
+      list-style: disc;
+    }
+    li {
+      margin-left: 1em;
     }
   `,
   Detail: styled.span`
